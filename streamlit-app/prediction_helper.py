@@ -25,7 +25,7 @@ def prepare_df(user_inputs):
         'age': user_inputs['age'],
         'income': user_inputs['income'],
         'loan_amount': user_inputs['loan_amount'],
-        'loan_to_income': user_inputs['loan_to_income_ratio'],
+        'loan_to_income': user_inputs['loan_amount'] / user_inputs['income'] if user_inputs['income'] > 0 else 0,
         'loan_tenure_months': user_inputs['loan_tenure_months'],
         'avg_dpd_per_delinquency': user_inputs['avg_dpd_per_delinquency'],
         'delinquency_ratio': user_inputs['delinquency_ratio'],
@@ -39,18 +39,16 @@ def prepare_df(user_inputs):
         'loan_type_Unsecured': 1 if user_inputs['loan_type'] == 'Unsecured' else 0,
         
         # add additional fields
-        'number_of_dependants': 1, # Dummy value
-        'years_at_current_address': 1, # Dummy value
-        'years_at_current_address': 1, # Dummy value
-        'sanction_amount': 1, # Dummy value
-        'bank_balance_at_application': 1, # Dummy value
-        'number_of_closed_accounts': 1, # Dummy value
-        'enquiry_count': 1, # Dummy value
-        'bank_balance_at_application': 1, # Dummy value
-        'gst': 1, # Dummy value
-        'net_disbursement': 1, # Dummy value
-        'principal_outstanding': 1, # Dummy value
-        'processing_fee': 1, # Dummy value
+        'number_of_dependants': 1,
+        'years_at_current_address': 1,
+        'sanction_amount': user_inputs['loan_amount'],  # approved loan amount
+        'bank_balance_at_application': 1,
+        'number_of_closed_accounts': 1,
+        'enquiry_count': 1,
+        'gst': 1,
+        'net_disbursement': 1,
+        'principal_outstanding': 1,
+        'processing_fee': 1,
     }
     
     print(f'input data : {input_data}')
