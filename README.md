@@ -4,11 +4,9 @@ A machine learning project that predicts the likelihood of a loan applicant defa
 
 ## Live App
 
-[Launch App](<app-url-here>)
+[Launch App](https://ml-project-credit-risk-model-azwasxdsvjbrqwtreerte.streamlit.app/)
 
 ## Screenshots
-
-<!-- Add screenshots here -->
 
 ![alt text](images/image-1.png)
 
